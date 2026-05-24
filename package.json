@@ -1,0 +1,19 @@
+{
+  "name": "apuntes-pensamiento-computacional",
+  "version": "0.0.1",
+  "description": "repositorio con libro de apuntes de pensamiento computacional",
+  "homepage": "https://github.com/disenoUDP/apuntes-pensamiento-computacional#readme",
+  "bugs": {
+    "url": "https://github.com/disenoUDP/apuntes-pensamiento-computacional/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/disenoUDP/apuntes-pensamiento-computacional.git"
+  },
+  "license": "ISC",
+  "author": "montoyamoraga",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
