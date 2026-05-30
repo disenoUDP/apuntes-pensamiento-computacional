@@ -1,0 +1,32 @@
+\documentclass[../principal.tex]{subfiles}
+\graphicspath{{\subfix{../imagenes/}}}
+
+\begin{document}
+
+\chapter{Lienzo en p5}
+
+En p5.js dibujaremos en un lienzo, una superficie rectangular en 2 dimensiones. El lienzo en p5.js recibe el nombre de canvas.
+
+\section{Contexto}
+
+El lienzo es una abstracción del elemento canvas introducido en HTML 5.
+
+En Processing existe una ventana donde renderizamos las gráficas que programamos, y donde también podemos programar interactividad con interfaces humano-computador como un teclado o un ratón. En p5.js, este lugar recibe el nombre de lienzo o canvas en inglés, ya que internamente está implementado con un elemento canvas de HTML 5.
+
+\section{Sintaxis en p5.js}
+
+En p5.js usamos la función createCanvas() para crear un lienzo, y que tiene los parámetros ancho (en eje x / horizontal), y altura (en eje y / vertical), ambas medidas en pixeles.
+
+\begin{lstlisting}[language=JavaScript]
+    createCanvas(ancho, altura);
+\end{lstlisting}
+
+\section{Referencias}
+
+\begin{enumerate}
+    \item  \url{https://en.wikipedia.org/wiki/Canvas_element}
+\end{enumerate}
+
+\end{document}
+
+
