@@ -54,6 +54,22 @@ draw=black,
 fill=green!30]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
+% JavaScript
+\lstdefinelanguage{JavaScript}{
+  morekeywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  morecomment=[s]{/*}{*/},
+  morecomment=[l]//,
+  morestring=[b]",
+  morestring=[b]'
+}
+
+% Style configurations
+\lstset{
+  language=JavaScript,
+  basicstyle=\small\ttfamily,
+  breaklines=true
+}
+
 \usepackage{circuitikz}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
@@ -90,6 +106,7 @@ fill=green!30]
 \subfile{conceptos/variables}
 \subfile{conceptos/bucles}
 \subfile{conceptos/condicionales}
+\subfile{conceptos/arreglos}
 \subfile{conceptos/funciones}
 
 \backmatter
