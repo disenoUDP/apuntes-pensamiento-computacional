@@ -7,19 +7,111 @@
 
 \section{Definición}
 
-Los arreglos son colecciones o conjuntos de datos.
+Los arreglos son colecciones o conjuntos de datos. Los arreglos son también conocidos en inglés como arrays.
 
-Los arreglos son también conocidos en inglés como arrays.
+En algunos lenguajes como Java y C, los arreglos nos permiten almacenar datos del mismo tipo, por ejemplo solamente números enteros o solamente caracteres, pero en JavaScript podemos almacenar distintos tipos de datos en el mismo arreglo.
 
-En algunos lenguajes como Java y C, los arreglos nos permiten almacenar datos del mismo tipo, por ejemplo, solamente números enteros, o solamente caracteres, pero en JavaScript podemos almacenar distintos tipos de datos en el mismo arreglo.
+Los arreglos en JavaScript no son primitivas, sino que son instancias de objetos del tipo \textit{Array}. Revisaremos el significado de objetos en un capítulo posterior. Esto le permite a los arreglos tener funcionalidades internas de gran utilidad, revisaremos algunas a continuación.
 
 \section{Sintaxis en JavaScript}
 
-Los arreglos en JavaScript se pueden declarar con la palabra clave let, igual que las variables, y asignarle como valor inicial un arreglo vacío con corchetes.
+Los arreglos en JavaScript se pueden declarar con la palabra clave let, igual que las variables, y asignarle como valor inicial un arreglo vacío con corchetes. En este libro usaremos esta versión.
 
 \begin{lstlisting}[language=JavaScript]
 let unArreglo = [];
 \end{lstlisting}
+
+Otra versión que no usaremos es la sintaxis:
+
+\begin{lstlisting}[language=JavaScript]
+let otroAreglo = new Array();
+\end{lstlisting}
+
+\section{Usos de arreglos}
+
+Hasta ahora si queremos declarar distintos nombres de colores debemos crear una variable por cada uno, por ejemplo
+
+\begin{lstlisting}[language=JavaScript]
+let colorPrincipal = "verde";
+let colorSecundario = "rojo";
+let colorFondo = "azul";
+let colorEnfasis = "violeta";
+\end{lstlisting}
+
+Para usar cualquier de estos colores, debemos usar cada nombre, rápidamente empezamos a tener muchos nombres de variables, cuando quizás internamente estamos tratándoles como un conjunto de colores relacionados, por ejemplo la paleta de colores de una obra que estamos programando.
+
+Los arreglos son una respuesta a este pensamiento, de pensar en un conjunto de datos como miembros de una misma colección, entonces en nuestro ejemplo podemos crear un arreglo llamado colores que contenga a todos los colores, y nos ahorramos la creación de una variable y un nombre de fantasía por cada dato.
+
+\begin{lstlisting}[language=JavaScript]
+let colores = ["verde", "rojo", "azul", "violeta"];
+\end{lstlisting}
+
+\section{Índices en arreglos}
+
+En computación, de forma estándar contamos desde 0. Es por esto si un arreglo tiene N elementos, están indizados desde 0 hasta N-1.
+
+Para acceder a un elemento, escribimos el nombre del arreglo, seguido de corchetes, y dentro de los corchetes ingresamos el indice al que queremos acceder.
+
+\begin{lstlisting}[language=JavaScript]
+    nombreDelArreglo[indice]
+\end{lstlisting}
+
+
+En nuestro ejemplo entonces tenemos los siguientes resultados.
+
+\begin{lstlisting}[language=JavaScript]
+console.log(colores[0])
+// imprime verde
+
+console.log(colores[1])
+// imprime rojo
+
+console.log(colores[2])
+// imprime azul
+
+console.log(colores[3])
+// imprime violeta
+
+console.log(colores[0])
+// imprime un error
+\end{lstlisting}
+
+\section{Largo de un arreglo}
+
+Un atributo muy importante es el largo de un arreglo, que inglés es conocido como length. El largo corresponde al número de casillas que tiene un arreglo.
+
+La sintaxis para acceder al largo de un arreglo es el nombre del arreglo, seguido de un punto, y luego de la palabra length.
+
+\begin{lstlisting}[language=JavaScript]
+nombreDelArreglo.length
+\end{lstlisting}
+
+En nuestro ejemplo, si imprimimos en consola el resultado, sería el valor 4, ya que los índices son 0, 1, 2, 3.
+
+\begin{lstlisting}[language=JavaScript]
+console.log(colores.length)
+// imprime 4
+\end{lstlisting}
+
+\section{Iteración en arreglos}
+
+Para iterar sobre todos los elementos de un arreglo, usaremos bucles for, y el atributo length. Por ejemplo, para imprimir en consola todos los elementos de un arreglo, proponemos la siguiente sintaxis.
+
+\begin{lstlisting}[language=JavaScript]
+    // recorrer todos los elementos del arreglo
+    // usando el iterador i
+    for(let i = 0; i < nombreDelArreglo.length; i++) {
+        // imprimir valor del elemento en la posición i
+        console.log(nombreDelArreglo[i]);
+    }
+\end{lstlisting}
+
+
+\section{Referencias}
+
+\begin{enumerate}
+    \item \url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array}
+\end{enumerate}
 
 
 \end{document}
