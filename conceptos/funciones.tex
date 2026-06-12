@@ -13,7 +13,15 @@ Las funciones permiten agrupar bloques de código para poder utilizarlos y volve
 
 \section{Sintaxis en JavaScript}
 
-Las funciones en JavaScript se declaran usando la palabra reservada $function$.
+Las funciones en JavaScript se declaran usando la palabra reservada $function$, y dándoles un nombre de fantasía.
+
+El siguiente punto a considerar es que después del nombre de la función vienen paréntesis (), donde se definen (o no) los parámetros de la función.
+
+Los parámetros son variables locales a la función que permiten ingresar distintos datos para ser usados, leídos e incluso modificados por la función.
+
+Otra palabra clave importante es la palabra return, que permite que la función emita como resultado un valor al exterior, que puede ser usado por el resto del código.
+
+Por ejemplo, aquí definiremos una función sumar() que tiene dos parámetros, a y b, los cuales son sumados internamente, asignados a una variable local resultado, cuyo valor es luego retornado.
 
 \begin{lstlisting}[language=JavaScript]
 // declaración de la función sumar
@@ -21,11 +29,39 @@ Las funciones en JavaScript se declaran usando la palabra reservada $function$.
 function sumar(a, b) {
     // declaracion de variable local x
     // cuyo resultado es la suma de a y b
-    let x = a + b;
-    // la función retorna el valor almacenado en x
-    return x;
+    let resultado = a + b;
+    // la función retorna el valor almacenado en resultado
+    return resultado;
 }
 \end{lstlisting}
+
+Para usar una función, tiene que haber sido declarada antes. La declaración anterior nos permite luego sumar números de la siguiente forma.
+
+\begin{lstlisting}[language=JavaScript]
+let unaSuma = sumar(3 ,4);
+\end{lstlisting}
+
+
+\section{Funciones en p5.js}
+
+El código en JavaScript que nos da el editor de p5.js cuando creamos un nuevo proyecto es el siguiente:
+
+\begin{lstlisting}[language=JavaScript]
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+}
+\end{lstlisting}
+
+En este código distinguimos cuatro funciones distintas, incluyendo setup(), draw(), createCanvas() y background().
+
+Las funciones setup() y draw() están definidas, pero nunca son usadas de forma explícita. Es trabajo de la biblioteca p5.js el usarlas como las conocemos, haciendo que primero ocurra setup() una vez, y luego ocurra draw() en bucle.
+
+Por otro lado, las funciones createCanvas() y background() están siendo usadas, pero no están declaradas acá, lo están en la biblioteca p5.js.
+
 
 \end{document}
 
