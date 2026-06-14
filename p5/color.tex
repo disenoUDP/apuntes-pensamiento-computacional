@@ -23,20 +23,66 @@ Las ondas de luz que tienen una frecuencia menor a rojo no son visibles y son de
 
 Las ondas de luz que tienen una frecuencia mayor a violeta no son visibles y son denominadas ultravioleta, como las que producen quemaduras en la piel.
 
-\section{Pixel y color}
-
-El pixel de una pantalla tradicionalmente está compuesto de 3 distintas 
+La percepción en nuestros ojos ocurre con receptores de 3 rangos de frecuencia distintos, en torno a los colores rojo, verde y azul.
 
 \section{Color y computación}
 
 Para describir un color necesitamos un sistema que sea capaz de tener al menos 10 millones de combinaciones, que es la cantidad de colores que una persona puede percibir.
 
-1 bit puede describir 2 valores posibles: 0 y 1. Si tenemos 2 bits, tenemos 4 valores posibles: 00, 01, 10 y 11. Con 3 bits, tenemos 8 valores posibles: 000, 001, 010, 011, 100, 101, 110, 111. La ecuación que gobierna cuántos valores posibles tenemos con N bits es:
+1 bit puede describir 2 valores posibles: 0 y 1. Si tenemos 2 bits, tenemos 4 valores posibles: 00, 01, 10 y 11. Con 3 bits, tenemos 8 valores posibles: 000, 001, 010, 011, 100, 101, 110, 111. La ecuación que gobierna cuántas combinaciones distintastenemos con N bits es:
 
-$${número de valores posibles} = {2}^{N}$$
+$${combinaciones} = {2}^{N}$$
 
 Entonces lo que estamos buscando, es cuántos bits necesitamos para tener al menos diez millones de valores posibles.
 
+Si aumentamos N, podemos calcular que con N=23 y N=24:
+
+$${2}^{23} = 8388608$$
+$${2}^{24} = 16777216$$
+
+Entonces con N = 23 no nos alcanza, recién con N = 24 superamos los 10 millones, y ese es el valor elegido por la industria computacional para representar colores.
+
+Debido a la percepción humana de color, estos 24 bits se usan para describir cuán encendida están 3 ampolletas o canales de colores: una dedicada a rojo, una a verde, y una azul. Este sistema se denomina RGB por sus iniciales en inglés.
+
+Cada canal de color entonces recibe 8 bits de resolución, y con eso cada canal tiene $2^8 = 256$ valores posibles. Y como en computación contamos desde 0, los valores de cada canal de color están entre el rango 0 y 255, para representar todo el espectro entre apagado y prendido.
+
+\section{Representación hexadecimal}
+
+Como cada canal tiene 8 bits de resolución, para describir un color necesitamos los 3 canales y con esto, el color rojo por ejemplo recibe la siguiente notación:
+
+$1111 1111 0000 0000 0000 0000$
+
+Si tomamos los 8 bits de cada canal, y los dividimos entre los primeros 4 y los siguientes 4, entonces tenemos que los 24 bits son 6 grupos de 4 bits.
+
+Los 4 bits permiten representar los siguientes números en binario:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ccc}
+\hline
+Binario & Decimal & Hexadecimal \\
+\hline
+0000 & 0  & 0 \\
+0001 & 1  & 1 \\
+0010 & 2  & 2 \\
+0011 & 3  & 3 \\
+0100 & 4  & 4 \\
+0101 & 5  & 5 \\
+0110 & 6  & 6 \\
+0111 & 7  & 7 \\
+1000 & 8  & 8 \\
+1001 & 9  & 9 \\
+1010 & 10 & A \\
+1011 & 11 & B \\
+1100 & 12 & C \\
+1101 & 13 & D \\
+1110 & 14 & E \\
+1111 & 15 & F \\
+\hline
+\end{tabular}
+\caption{Representaciones binarias, decimales y hexadecimales de valores entre 0 y 15.}
+\label{tab:binario-decimal-hexadecimal}
+\end{table}
 
 \section{Referencias}
 
